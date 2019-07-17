@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+<div id="app-2">
+        <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </span>
+</div>
+<div id="app3">
+    <p v-if="seen">能看到我</p>
+</div>
+
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{todo.text}}
+        </li>
+
+    </ol>
+</div>
+
+<div id="app-5">
+    <p>{{message}}</p>
+    <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+
+<div id="app-6">
+    <p>{{message}}</p>
+    <input v-model="message">
+</div>
+<!--<ol>-->
+    <!--<todo-item></todo-item>-->
+<!--</ol>-->
+
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+
+        </todo-item>
+    </ol>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        }
+    });
+
+    var app2 = new Vue({
+        el: '#app-2',
+        data: {
+            message: '页面加载于 ' + new Date().toLocaleString()
+        }
+    })
+    var app3 = new Vue({
+        el: '#app3',
+        data: {
+            seen:true
+        }
+    });
+
+    var app4 = new Vue({
+        el:'#app-4',
+        data:{
+            todos:[
+                {id:1   ,text:"语文"},
+                {id:2,text:"数学"},
+                {id:3,text:"英语"},
+            ]
+        }
+    });
+
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            message:'点击逆转消息'
+        },
+        methods: {
+            reverseMessage: function() {
+                this.message = this.message.split('').reverse().join('');
+            }
+
+        }
+    });
+
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message:'Hello '
+        },
+    });
+
+    // Vue.component('todo-item',{
+    //     template: '<li>这是待办项</li>'
+    // });
+    Vue.component('todo-item',{
+        props: ['todo'],
+        template: '<li>{{todo.text}}</li>'
+    });
+
+    var app7 = new Vue({
+        el: '#app-7',
+        data:{
+            groceryList:[
+                {id:1,text:"蔬菜"},
+                {id:3,text:"视频"},
+                {id:2,text:"肉食"},
+            ]
+        }
+    })
+</script>
+</body>
+</html>

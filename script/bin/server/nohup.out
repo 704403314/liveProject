@@ -1,0 +1,309 @@
+
+
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(61): app\common\lib\redis\Predis::getInstance()                 
+  #3 [internal function]: Ws->onOpen(Object(swoole_websocket_server), Object(swoole_http_request))                                    
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+Exception trace:
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:32:49 *86.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:32:49 $79.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+
+
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(146): app\common\lib\redis\Predis::getInstance()                
+  #3 [internal function]: Ws->onClose(Object(swoole_websocket_server), 7, 0)                                                          
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+Exception trace:
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:33:54 *93.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:33:54 $79.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+
+
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(61): app\common\lib\redis\Predis::getInstance()                 
+  #3 [internal function]: Ws->onOpen(Object(swoole_websocket_server), Object(swoole_http_request))                                    
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+Exception trace:
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:33:55 *87.1]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:33:55 $79.0]	WARNING	swManager_check_exit_status: worker#1 abnormal exit, status=255, signal=0
+
+
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(146): app\common\lib\redis\Predis::getInstance()                
+  #3 [internal function]: Ws->onClose(Object(swoole_websocket_server), 8, 1)                                                          
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+Exception trace:
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:34:42 *101.1]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:34:42 $79.0]	WARNING	swManager_check_exit_status: worker#1 abnormal exit, status=255, signal=0
+
+
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(61): app\common\lib\redis\Predis::getInstance()                 
+  #3 [internal function]: Ws->onOpen(Object(swoole_websocket_server), Object(swoole_http_request))                                    
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+Exception trace:
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:34:42 *88.2]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:34:42 $79.0]	WARNING	swManager_check_exit_status: worker#2 abnormal exit, status=255, signal=0
+
+
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(146): app\common\lib\redis\Predis::getInstance()                
+  #3 [internal function]: Ws->onClose(Object(swoole_websocket_server), 6, 1)                                                          
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+Exception trace:
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:39:48 *89.3]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+
+
+[2019-07-02 19:39:48 $79.0]	WARNING	swManager_check_exit_status: worker#3 abnormal exit, status=255, signal=0
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+
+
+
+
+                                                                                                                                      
+                                                                                                                                      
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  [think\exception\ErrorException]                                                                                                    
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(146): app\common\lib\redis\Predis::getInstance()                
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #3 [internal function]: Ws->onClose(Object(swoole_websocket_server), 3, 0)                                                          
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(146): app\common\lib\redis\Predis::getInstance()                
+  #3 [internal function]: Ws->onClose(Object(swoole_websocket_server), 4, 1)                                                          
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(146): app\common\lib\redis\Predis::getInstance()                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #3 [internal function]: Ws->onClose(Object(swoole_websocket_server), 5, 0)                                                          
+  #6 {main}                                                                                                                           
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+
+
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+Exception trace:
+Exception trace:
+    thrown                                                                                                                            
+                                                                                                                                      
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+ think\Error::appShutdown() at n/a:n/a
+
+
+
+
+Exception trace:
+[2019-07-02 19:39:48 *97.0]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:39:48 *108.1]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:39:48 *109.2]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:39:48 $79.0]	WARNING	swManager_check_exit_status: worker#0 abnormal exit, status=255, signal=0
+[2019-07-02 19:39:48 $79.0]	WARNING	swManager_check_exit_status: worker#2 abnormal exit, status=255, signal=0
+[2019-07-02 19:39:48 $79.0]	WARNING	swManager_check_exit_status: worker#1 abnormal exit, status=255, signal=0
+
+
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(146): app\common\lib\redis\Predis::getInstance()                
+  #3 [internal function]: Ws->onClose(Object(swoole_websocket_server), 2, 1)                                                          
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+Exception trace:
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:39:48 *148.3]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:39:48 $79.0]	WARNING	swManager_check_exit_status: worker#3 abnormal exit, status=255, signal=0
+
+
+                                                                                                                                      
+  [think\exception\ErrorException]                                                                                                    
+  Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25   
+  Stack trace:                                                                                                                        
+  #0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)      
+  #1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()  
+  #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(146): app\common\lib\redis\Predis::getInstance()                
+  #3 [internal function]: Ws->onClose(Object(swoole_websocket_server), 1, 0)                                                          
+  #4 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(56): swoole_http_server->start()                                
+  #5 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws.php(191): Ws->__construct()                                         
+  #6 {main}                                                                                                                           
+    thrown                                                                                                                            
+                                                                                                                                      
+
+
+Exception trace:
+ () at /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-02 19:39:48 *151.2]	ERROR	zm_deactivate_swoole (ERROR 503): Fatal error: Uncaught RedisException: Connection refused in /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php:25
+Stack trace:
+#0 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(25): Redis->connect('127.0.0.1', '6379', 5)
+#1 /data/web_data/alpha_framework/apps/web/application/common/lib/redis/Predis.php(17): app\common\lib\redis\Predis->__construct()
+#2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
+[2019-07-02 19:39:48 $79.0]	WARNING	swManager_check_exit_status: worker#2 abnormal exit, status=255, signal=0
+[2019-07-02 19:41:40 #78.2]	NOTICE	Server is shutdown now.
