@@ -1,41 +1,57 @@
 <?php
 namespace app\index\controller;
-use app\index\controller\Util;
+//use app\index\controller\BaseController;
 use app\common\lib\redis\Predis;
+use app\common\lib\Redis;
+
 class Chart
 {
+    public function __construct()
+    {
+    }
+
+    /**
+     * 发送评论
+     */
     public function index()
     {
         // 登录判断
-
+        $userInfo = \app\common\BaseLogic::getInstance()->checkLogin();
+        if (empty($userInfo)) {
+            return Util::show('401','未登录');
+        }
+        //return Util::show('401','error');
+        //echo json_encode(['aa'=>1]);
         if (empty($_POST['game_id'])) {
             return Util::show(config('code.error'),'error');
         }
         if (empty($_POST['content'])) {
             return Util::show(config('code.error'),'error');
         }
-
-        $data = [
-            'user' => "用户" . rand(0,2000),
-            'content' => $_POST['content'],
-        ];
-        //echo '999';
-        //$ws = $_POST['http_server'];
-        //print_r($ws->ports[1]->connnections);
-        foreach ($_POST['http_server']->ports[1]->connnections as $fd) {
-            $_POST['http_server']->push($fd,'123');
-            //$_POST['http_server']->push(2,'123');
-            //$_POST['http_server']->push(3,'123');
-            //$_POST['http_server']->push(4,'123');
-            //$_POST['http_server']->push(5,'123');
-            //$_POST['http_server']->push(6,'123');
-            //$_POST['http_server']->push(7,'123');
-            //$_POST['http_server']->push(8,'123');
-            //$_POST['http_server']->push(9,'123');
-            //$_POST['http_server']->push(10,'123');
+        //print_r($_POST);
+        $userInfo = json_decode($userInfo,true);
+        $res = \app\index\logic\LogicChat::getInstance()->pushChat($userInfo);
+        if ($res['code'] == 0) {
+            return Util::show(config('code.success'),'发送成功');
+        } else {
+            return Util::show(config('code.error'),$res['msg']);
         }
-        return Util::show(config('code.success'),'ok', json_encode($data));
 
     }
+
+    /**
+     * 验证登录
+     */
+    public function checkLogin()
+    {
+        $userInfo = \app\common\BaseLogic::getInstance()->checkLogin();
+        if (empty($userInfo)) {
+            return Util::show('401','未登录');
+        } else {
+            return Util::show(config('code.success'),'已登陆');
+        }
+    }
+
+
 
 }

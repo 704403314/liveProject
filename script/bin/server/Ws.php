@@ -40,8 +40,8 @@ class Ws
         $this->ws->set([
             'worker_num' => 4,
             'task_worker_num' => 4,
-            //'document_root' => '/Users/hehui/shareFile/swoole_mooc/thinkphp/public/static',
-            'document_root' => '/data/web_data/apps/swoole/public/static',
+            //'document_root' => '/Users/hehui/shareFile/swoole_mooc/swoole_live/public/static',
+            'document_root' => '/data/web_data/apps/liveProject/public/static',
             'enable_static_handler' => true,
         ]);
         $this->ws->on('request', [$this, 'onRequest']);
@@ -55,20 +55,29 @@ class Ws
         $this->ws->on('finish', [$this, 'onFinish']);
         $this->ws->start();
     }
+
+    /**
+     * 客户和服务端建立连接时
+     * @param $ws
+     * @param $request
+     */
     public function onOpen($ws,$request)
     {
-        //$this->ws->push($request->fd,'testtest');
-        \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'),$request->fd);
-        //print_r($ws);
+        if ($request->server['server_port'] == '8811') {
+            \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'),$request->fd);
+        }
+        if ($request->server['server_port'] == '8812') {
+            \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.chat_key'),$request->fd);
+        }
     }
 
     public function onStart()
     {
-        //swoole_set_process_name('live_master');
+        swoole_set_process_name('live_master');
     }
     public function onMessage($ws,$frame)
     {
-        echo 'push-message:'. $frame->data . "\n";
+        //echo 'push-message:'. $frame->data . "\n";
         //$data = ['task' => 1, 'fd' => $frame->fd];
         //$ws->task($data);
         $ws->push($frame->fd, 'server-push:' . date('Y-m-d H:i:s'));
@@ -77,14 +86,28 @@ class Ws
     public function onWorkerStart($server,$worker_id)
     {
         define('APP_PATH', __DIR__ . '/../../../application/');
-
-        //require __DIR__ . '/../thinkphp/base.php';
         require __DIR__ . '/../../../thinkphp/start.php';
+
+        $redisConfig = config('redis.game_key');
+        foreach ($redisConfig as $v) {
+            if (strpos($v,'_key') !== false) {
+                $clients = \app\common\lib\redis\Predis::getInstance()->sMembers($v);
+                //print_r($clients);
+                if (!empty($clients)) {
+                    foreach ($clients as $fd) {
+                        \app\common\lib\redis\Predis::getInstance()->sRem($v,$fd);
+                    }
+                }
+
+            }
+        }
+
 
     }
 
     public function onRequest($request,$response)
     {
+        //print_r($request);
         $_GET = [];
         $_POST = [];
         $_SERVER = [];
@@ -116,6 +139,13 @@ class Ws
                 $_FILES[$k] = $v;
             }
         }
+
+        if (isset($request->cookie)) {
+            foreach ($request->cookie as $k => $v) {
+                $_COOKIE[$k] = $v;
+            }
+        }
+
         if ($_SERVER['REQUEST_URI'] != '/favicon.ico') {
             $this->writeLog();
         } else {
@@ -123,18 +153,21 @@ class Ws
             $response->end();
             return ;
         }
-
+        //print_r($request->cookie);
 
         $_POST['http_server'] = $this->ws;
+        //ob_start();
+
         ob_start();
+
         try{
             think\Container::get('app', [APP_PATH])
                 ->run()
                 ->send();
         } catch (\Exception $e) {
-
+            print_r($e->getMessage(). 'error123');
         }
-        //echo request()->action().
+
         $res = ob_get_contents();
         ob_end_clean();
         $response->end($res);
@@ -143,9 +176,11 @@ class Ws
 
     public function onClose($ws,$frame)
     {
-        \app\common\lib\redis\Predis::getInstance()->sRem(config('redis.live_game_key'),$frame);
+        //print_r($ws);
+        //print_r($frame);
+        //\app\common\lib\redis\Predis::getInstance()->sRem(config('redis.live_game_key'),$frame);
 
-        echo 'clientid:'. $frame . "\n";
+        //echo 'clientid:'. $frame . PHP_EOL;
     }
 
 
@@ -155,20 +190,14 @@ class Ws
         $obj = new app\common\lib\task\Task;
         $method = $data['method'];
         $obj->$method($data['data'],$serv);
-        //try{
-        //    $sms = \app\common\lib\sms\api_demo\SmsDemo::sendSms($data['phone'],$data['code']);
-        //
-        //} catch (\Exception $e) {
-        //    print_r($e->getMessage());
-        //    return Util::show(config('code.error'),'阿里大鱼异常');
-        //}
+
         return true;
 
     }
     public function onFinish($serv,$taskId,$data)
     {
-        echo "taskID:{$taskId}\n";
-        echo "finish-data-success:{$data}\n";
+        //echo "taskID:{$taskId}\n";
+        //echo "finish-data-success:{$data}\n";
     }
 
     public function writeLog()

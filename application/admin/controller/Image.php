@@ -1,9 +1,10 @@
 <?php
 namespace app\admin\controller;
-use app\index\controller\Util;
+use app\common\controller\Util;
 class Image
 {
-    const  PROJECT_PATH = '/Users/hehui/shareFile/swoole_mooc/thinkphp';
+    //const  PROJECT_PATH = '/Users/hehui/shareFile/swoole_mooc/thinkphp';
+    const  PROJECT_PATH = '/data/web_data/apps/liveProject';
 
 
     public function index()

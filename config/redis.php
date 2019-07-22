@@ -12,5 +12,7 @@ return [
     'out_time' => '120',
     'timeOut' => 5,
     'live_game_key' => 'live_game_key',
+    'chat_key' => 'chat_key',
+    'game_key' => ['live_game_key','chat_key'],
 
 ];

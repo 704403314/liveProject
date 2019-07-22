@@ -13,13 +13,13 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => '154.209.79.106',
     // 数据库名
     'database'        => 'swoole',
     // 用户名
-    'username'        => 'hehui',
+    'username'        => 'mysql',
     // 密码
-    'password'        => '123456',
+    'password'        => 'HH1234',
     // 端口
     'hostport'        => '3306',
     // 连接dsn

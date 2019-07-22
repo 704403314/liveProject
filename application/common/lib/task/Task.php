@@ -33,10 +33,16 @@ class Task
     public function pushLive($data, $serv)
     {
         $clients = Predis::getInstance()->sMembers(config('redis.live_game_key'));
-        //print_r($clients);
         foreach ($clients as $fd) {
             $serv->push($fd,json_encode($data));
-            //$ws->push($fd,json_encode(['aa'=>999]));
+        }
+    }
+
+    public function pushChat($data, $serv)
+    {
+        $clients = Predis::getInstance()->sMembers(config('redis.chat_key'));
+        foreach ($clients as $fd) {
+            $serv->push($fd,json_encode($data));
         }
     }
 }

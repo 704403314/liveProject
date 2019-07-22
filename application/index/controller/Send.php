@@ -11,6 +11,7 @@ class Send extends Util
         //require_once __DIR__. '/../../../vendor/sms/api_demo/SmsDemo.php';
         //$phoneNum = request()->get('phone_num',0,'intval');
         $phoneNum = intval($_GET['phone_num']);
+
         //print_r($phoneNum);
         if (empty($phoneNum)) {
             return Util::show(config('code.error'),'error');
