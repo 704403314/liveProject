@@ -307,3 +307,162 @@ Stack trace:
 #2 /data/web_data/alpha_framework/apps/web/script/bin/server/Ws
 [2019-07-02 19:39:48 $79.0]	WARNING	swManager_check_exit_status: worker#2 abnormal exit, status=255, signal=0
 [2019-07-02 19:41:40 #78.2]	NOTICE	Server is shutdown now.
+[2019-07-22 20:07:33 *11055.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 ^11050.5]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 *11054.1]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 *11053.0]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 ^11049.4]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 $11046.0]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 *11056.3]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 ^11052.7]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 ^11051.6]	WARNING	swSignal_callback (ERRNO 707): Unable to find callback function for signal Hangup: 1
+[2019-07-22 20:07:33 #11045.2]	WARNING	swSignalfd_onSignal (ERRNO 707): Unable to find callback function for signal Hangup: 1
+PHP Fatal error:  Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[8] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)
+#1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('8', '{"user":"\\u7528...')
+#2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))
+#3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 3, 1, Array)
+#4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()
+#5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()
+#6 {main}
+  thrown in /data/web_data/apps/liveProject/application/common/lib/task/Task.php on line 45
+
+
+                                                                                                                                                                                                                                  
+  [think\exception\ErrorException]                                                                                                                                                                                                
+  Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[8] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45  
+  Stack trace:                                                                                                                                                                                                                    
+  #0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)                                                                                                                        
+  #1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('8', '{"user":"\\u7528...')                                                                                          
+  #2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))                                                                                    
+  #3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 3, 1, Array)                                                                                                                                                
+  #4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()                                                                                                                                         
+  #5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()                                                                                                                                             
+  #6 {main}                                                                                                                                                                                                                       
+    thrown                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                  
+
+
+Exception trace:
+ () at /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-24 20:14:13 ^11049.4]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[8] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)
+#1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('8', '{"user":"\\u7528...')
+#2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))
+#3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 3, 1, Array)
+#4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()
+#5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()
+#6 {main}
+  thrown in /data/web_data/apps/liveProject/application/common/lib/task/Task.php on line 45
+[2019-07-24 20:14:13 $11046.0]	WARNING	swManager_check_exit_status: worker#4[pid=11049] abnormal exit, status=255, signal=0
+PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /data/web_data/apps/liveProject/thinkphp/library/think/db/Connection.php on line 709
+[2019-07-24 20:14:13 $11046.0]	WARNING	swManager_check_exit_status: worker#1[pid=11054] abnormal exit, status=255, signal=0
+PHP Fatal error:  Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[41] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)
+#1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('41', '{"user":"\\u7528...')
+#2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))
+#3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 3, 1, Array)
+#4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()
+#5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()
+#6 {main}
+  thrown in /data/web_data/apps/liveProject/application/common/lib/task/Task.php on line 45
+
+
+                                                                                                                                                                                                                                   
+  [think\exception\ErrorException]                                                                                                                                                                                                 
+  Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[41] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45  
+  Stack trace:                                                                                                                                                                                                                     
+  #0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)                                                                                                                         
+  #1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('41', '{"user":"\\u7528...')                                                                                          
+  #2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))                                                                                     
+  #3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 3, 1, Array)                                                                                                                                                 
+  #4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()                                                                                                                                          
+  #5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()                                                                                                                                              
+  #6 {main}                                                                                                                                                                                                                        
+    thrown                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                   
+
+
+Exception trace:
+ () at /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-25 15:15:18 ^1318.4]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[41] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)
+#1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('41', '{"user":"\\u7528...')
+#2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))
+#3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 3, 1, Array)
+#4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()
+#5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()
+#6 {main}
+  thrown in /data/web_data/apps/liveProject/application/common/lib/task/Task.php on line 45
+[2019-07-25 15:15:18 $11046.0]	WARNING	swManager_check_exit_status: worker#4[pid=1318] abnormal exit, status=255, signal=0
+PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /data/web_data/apps/liveProject/thinkphp/library/think/db/Connection.php on line 709
+[2019-07-25 15:15:18 $11046.0]	WARNING	swManager_check_exit_status: worker#1[pid=1319] abnormal exit, status=255, signal=0
+PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /data/web_data/apps/liveProject/thinkphp/library/think/db/Connection.php on line 709
+[2019-07-25 15:15:22 $11046.0]	WARNING	swManager_check_exit_status: worker#2[pid=11055] abnormal exit, status=255, signal=0
+PHP Fatal error:  Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[54] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)
+#1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('54', '{"user":"\\u7528...')
+#2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))
+#3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 0, 1, Array)
+#4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()
+#5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()
+#6 {main}
+  thrown in /data/web_data/apps/liveProject/application/common/lib/task/Task.php on line 45
+
+
+                                                                                                                                                                                                                                   
+  [think\exception\ErrorException]                                                                                                                                                                                                 
+  Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[54] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45  
+  Stack trace:                                                                                                                                                                                                                     
+  #0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)                                                                                                                         
+  #1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('54', '{"user":"\\u7528...')                                                                                          
+  #2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))                                                                                     
+  #3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 0, 1, Array)                                                                                                                                                 
+  #4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()                                                                                                                                          
+  #5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()                                                                                                                                              
+  #6 {main}                                                                                                                                                                                                                        
+    thrown                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                   
+
+
+Exception trace:
+ () at /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+ think\Error::appShutdown() at n/a:n/a
+
+
+[2019-07-25 15:18:03 ^11051.6]	ERROR	zm_deactivate_swoole (ERRNO 503): Fatal error: Uncaught think\exception\ErrorException: Swoole\WebSocket\Server::push(): the connected client of connection[54] is not a websocket client or closed in /data/web_data/apps/liveProject/application/common/lib/task/Task.php:45
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'Swoole\\WebSocke...', '/data/web_data/...', 45, Array)
+#1 /data/web_data/apps/liveProject/application/common/lib/task/Task.php(45): Swoole\WebSocket\Server->push('54', '{"user":"\\u7528...')
+#2 /data/web_data/apps/liveProject/script/bin/server/Ws.php(192): app\common\lib\task\Task->pushChat(Array, Object(Swoole\WebSocket\Server))
+#3 [internal function]: Ws->onTask(Object(Swoole\WebSocket\Server), 0, 1, Array)
+#4 /data/web_data/apps/liveProject/script/bin/server/Ws.php(56): Swoole\Server->start()
+#5 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()
+#6 {main}
+  thrown in /data/web_data/apps/liveProject/application/common/lib/task/Task.php on line 45
+[2019-07-25 15:18:03 $11046.0]	WARNING	swManager_check_exit_status: worker#6[pid=11051] abnormal exit, status=255, signal=0
+[2019-07-25 15:23:49 #11045.2]	WARNING	swServer_signal_handler: Fatal Error: manager process exit. status=0, signal=[Unknown signal 0: 0]
+[2019-07-25 15:24:08 @24391.0]	WARNING	swSocket_bind(:428): bind(0.0.0.0:80) failed, Error: Address already in use[98]
+PHP Fatal error:  Uncaught Swoole\Exception: failed to listen server port[0.0.0.0:80], Error: Address already in use[98] in /data/web_data/apps/liveProject/script/bin/server/Ws.php:38
+Stack trace:
+#0 /data/web_data/apps/liveProject/script/bin/server/Ws.php(38): Swoole\Server->__construct('0.0.0.0', 80)
+#1 /data/web_data/apps/liveProject/script/bin/server/Ws.php(220): Ws->__construct()
+#2 {main}
+  thrown in /data/web_data/apps/liveProject/script/bin/server/Ws.php on line 38
+[2019-07-25 15:29:31 @24667.0]	WARNING	swSocket_bind(:428): bind(0.0.0.0:8812) failed, Error: Address already in use[98]
+[2019-07-25 15:31:17 #24667.2]	INFO	Server is shutdown now
+[2019-07-25 15:32:54 #11045.2]	INFO	Server is shutdown now
+[2019-07-25 15:32:54 #11045.2]	WARNING	swFactoryProcess_shutdown(:64): swKill(11046) failed, Error: No such process[3]
+[2019-07-25 15:32:54 #11045.2]	WARNING	swFactoryProcess_shutdown(:69): waitpid(11046) failed, Error: No child processes[10]
+[2019-07-25 15:44:21 #25377.2]	INFO	Server is shutdown now

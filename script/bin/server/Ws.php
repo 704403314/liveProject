@@ -9,7 +9,7 @@ class Ws
 {
     const HOST = '0.0.0.0';
     //const PORT = 80;
-    const PORT = 8811;
+    const PORT = 80;
     const CHART_PORT = 8812;
     public $http = null;
     public $ws = null;
@@ -63,10 +63,10 @@ class Ws
      */
     public function onOpen($ws,$request)
     {
-        if ($request->server['server_port'] == '8811') {
+        if ($request->server['server_port'] == self::PORT) {
             \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'),$request->fd);
         }
-        if ($request->server['server_port'] == '8812') {
+        if ($request->server['server_port'] == self::CHART_PORT) {
             \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.chat_key'),$request->fd);
         }
     }
