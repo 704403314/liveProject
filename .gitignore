@@ -4,3 +4,4 @@ composer.lock
 thinkphp
 *.jpg
 *.out
+application/common/lib/sms/api_demo/
