@@ -10,10 +10,18 @@ class Index
         return '';
     }
 
-    public function hello($name = 'ThinkPHP5')
+    public function hello()
     {
-        file_put_contents('./swoole.log','qqq',FILE_APPEND);
-        echo '999';
+        //header('Access-Control-Allow-Origin:http://test.com');
+        //file_put_contents('./swoole.log','qqq',FILE_APPEND);
+        //echo '999';
+        //$jsonp = $_GET['callback'];//get接收jsonp自动生成的函数名
+        //$arr = array(
+        //    'id' => 'asdf',
+        //    'name' => 'eric'
+        //);
+        //echo $jsonp.'('. json_encode($arr). ')'; //jsonp函数名包裹json数据
+        echo 'swoole.tankhui.cn ,请求参数:' . json_encode($_GET);
         //return 'hello,' . $name;
     }
 

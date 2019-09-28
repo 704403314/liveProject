@@ -16,7 +16,7 @@ class Task
             $sms = \app\common\lib\sms\api_demo\SmsDemo::sendSms($data['phone'],$data['code']);
 
         } catch (\Exception $e) {
-            print_r($e->getMessage());
+            //print_r($e->getMessage());
             return false;
         }
 
@@ -34,7 +34,12 @@ class Task
     {
         $clients = Predis::getInstance()->sMembers(config('redis.live_game_key'));
         foreach ($clients as $fd) {
-            $serv->push($fd,json_encode($data));
+            try {
+                $serv->push($fd,json_encode($data));
+            } catch (\Exception $e) {
+                continue;
+            }
+
         }
     }
 
@@ -42,7 +47,12 @@ class Task
     {
         $clients = Predis::getInstance()->sMembers(config('redis.chat_key'));
         foreach ($clients as $fd) {
-            $serv->push($fd,json_encode($data));
+            try {
+                $serv->push($fd,json_encode($data));
+            } catch (\Exception $e) {
+                continue;
+            }
+
         }
     }
 }

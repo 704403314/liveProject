@@ -63,6 +63,7 @@ class Ws
      */
     public function onOpen($ws,$request)
     {
+
         if ($request->server['server_port'] == self::PORT) {
             \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'),$request->fd);
         }
@@ -85,6 +86,7 @@ class Ws
 
     public function onWorkerStart($server,$worker_id)
     {
+        //header('Access-Control-Allow-Origin:http://swoole.tankhui.cn:888');
         define('APP_PATH', __DIR__ . '/../../../application/');
         require __DIR__ . '/../../../thinkphp/start.php';
 
@@ -107,7 +109,8 @@ class Ws
 
     public function onRequest($request,$response)
     {
-        //print_r($request);
+        //
+        //print_r($request->header);
         $_GET = [];
         $_POST = [];
         $_SERVER = [];
@@ -178,8 +181,16 @@ class Ws
     {
         //print_r($ws);
         //print_r($frame);
+        //print_r($ws);
         //\app\common\lib\redis\Predis::getInstance()->sRem(config('redis.live_game_key'),$frame);
 
+        //if ($request->server['server_port'] == self::PORT) {
+        //    \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.live_game_key'),$request->fd);
+        //}
+
+        //if ($request->server['server_port'] == self::CHART_PORT) {
+        //    \app\common\lib\redis\Predis::getInstance()->sAdd(config('redis.chat_key'),$request->fd);
+        //}
         //echo 'clientid:'. $frame . PHP_EOL;
     }
 
